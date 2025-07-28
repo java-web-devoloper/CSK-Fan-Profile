@@ -7,11 +7,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -30,8 +28,6 @@
   border: 3px solid #FFD700 !important;
   border-radius: 20px;
 }
-
-
     .profile-header {
       text-align: center;
       padding: 1rem 1rem 0.5rem;
@@ -84,6 +80,10 @@
       color: #0a1b65;
     }
 
+  .info-card {
+  color: #0a1b65;
+}
+
     .tabs {
       display: flex;
       justify-content: center;
@@ -102,6 +102,10 @@
       color: #0a1b65;
       border-color: #0a1b65;
     }
+
+  #nav-tab .nav-link {
+  color: #0a1b65;
+}
 
     .form-group {
       margin: 1rem 0;
@@ -142,6 +146,16 @@
         flex: 1 1 100%;
       }
     }
+    .updateFanProfile:hover {
+    background-color: #0a1b65 !important;
+    border-color: #0a1b65 !important;
+    color: white !important;
+  }
+
+  .updateFanProfile:hover .arrowColorchange {
+  color: white !important;
+}
+
   </style>
 </head>
 <body>
@@ -150,140 +164,122 @@
     <div class="tab-pane fade show active" id="fan" role="tabpanel" aria-labelledby="fan-tab">
       <div class="card mb-5 p-4">
         <div class="profile-header text-center">
+          <div class="position-relative d-inline-block"></div>
           <div class="position-relative">
             <img class="position-relative" src="csk logo.png" alt="Profile"
               style="border: 4px solid #FFD700; border-radius: 50%; padding: 4px; width: 120px; height: 120px;" />
-            <div class="position-absolute bottom-0 start-50 translate-middle-x"
-              style="margin-left: 35px; background-color: rgb(232, 74, 100); border: 2px solid #0a1b65; border-radius: 50%; padding: 2px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
-              <i class="bi bi-pencil-fill" style="font-size: 20px; color: white;"></i>
-            </div>
+            <div id="editIcon" class="position-absolute bottom-0 start-50 translate-middle-x"
+              style="margin-left: 35px; background-color: rgb(232, 74, 100); border: 2px solid #0a1b65; border-radius: 50%; padding: 2px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                <i class="bi bi-pencil-fill" style="font-size: 20px; color: white;"></i>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;" />
           </div>
           <h2 style="color: #0a1b65; font-weight: bold;">CSK Warrior</h2>
           <div class="badges mb-3">
             <span style="background-color: #0a1b65; color: white; padding: 6px 16px; border-radius: 50px; display: inline-block;">CSK Fan</span>
             <span style="color: #0a1b65; border: 2px solid #0a1b65; padding: 6px 12px; border-radius: 50px; font-weight: normal;">
-          <i class="bi bi-trophy-fill me-1"></i>Super King
-</span>
+          <i class="bi bi-trophy-fill me-1"></i>Super King</span>
+          
 
+    <div class="info-boxes row g-3" style="font-size: 1.05rem;">
+    <div class="col-12 p-3 bg-white" style="border: 2px solid #FFD700; border-radius: 1rem;">
 
-        <div class="info-boxes d-flex flex-wrap gap-3" style="font-size: 1.05rem;">
-          <div class="info-box d-flex flex-column" style="flex: 1 1 100%; gap: 0.75rem; padding: 0.75rem;">
-            <div class="d-flex align-items-center gap-2">
-              <i class="bi bi-person-circle"></i>
-              <strong>Fan Profile</strong> – 75% Complete
-            </div>
-            <div class="progress w-100" style="height: 8px;">
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
+    <!-- Fan Profile Heading -->
+    <div class="text-start fw-bold mb-2" style="color: #0a1b65;">
+      <i class="bi bi-person-circle me-2"></i>Fan Profile
+    </div>
 
-          <div class="info-box d-flex align-items-center gap-2 flex-1" style="padding: 0.75rem;">
-            <i class="bi bi-calendar-event-fill fs-5"></i>
-            <strong>CSK Fan Since</strong> – IPL Season 2023
-          </div>
+    <!-- Progress Bar and Completion Text Wrapper -->
+    <div class="w-50">
+      <!-- Progress Bar -->
+      <div class="progress" style="height: 8px;">
+        <div class="progress-bar" role="progressbar" style="width: 75%; background-color: #0a1b65;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
 
-          <div class="info-box d-flex align-items-center gap-2 flex-1" style="padding: 0.75rem;">
+      <!-- Completion Text -->
+      <div class="mt-2 text-start" style="color: #0a1b65;">
+            75% Complete
+      </div>
+    </div>
+
+  </div>
+</div>
+  <div class="info-boxes row g-3" style="font-size: 1.05rem;">
+  <div class="col-12 p-3 bg-white" style="border: 2px solid #FFD700; border-radius: 1rem;">
+
+    <!-- CSK Fan Since Heading -->
+    <div class="text-start text-primary fw-bold mb-2">
+      <i class="bi bi-calendar-event-fill me-2"></i>CSK Fan Since
+    </div>
+
+    <!-- Fan Since Text -->
+    <div class="mt-2 text-start text-primary">
+      IPL Season 2023
+    </div>
+
+  </div>
+</div>
+
+    <div class="info-boxes row g-3" style="font-size: 1.05rem;">
+    <div class="col-12 p-3 bg-white" style="border: 2px solid #FFD700; border-radius: 1rem;">
+          <div class="info-box d-flex align-items-center gap-2 flex-1" style="padding: 0.75rem;" style="color: #0a1b65">
             <i class="bi bi-trophy-fill fs-5"></i>
-            <strong>Loyalty Level</strong> – 
-            <span class="badge rounded-pill bg-warning text-dark px-3 py-1 ms-1">Super King</span>
+            <strong style="color: #0a1b65">Loyalty Level</strong> 
+            <span class="badge rounded-pill bg-warning px-3 py-1 ms-1" style="color:#0a1b65;">Super King</span>
           </div>
         </div>
 
         <div class="text-center mt-4">
-          <button class="btn btn-warning me-2">
+          <button class="btn btn-warning me-2" style="color:#0a1b65;">
             <i class="bi bi-person-plus-fill"></i> Invite CSK Fan
           </button>
-          <button id="editProfileBtn" class="btn btn-primary">
-            <i class="bi bi-pencil-fill me-1"></i> Edit Profile
+          <button id="editProfileBtn" class="btn text-white" style="background-color:#0a1b65;">
+            <i class="bi bi-pencil-fill me-1" style="background-color:#0a1b65;"></i> Edit Profile
           </button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-<div class="d-flex justify-content-between flex-wrap gap-3 p-3" style="background-color: #0a1b65;">
-  <div class="info-card bg-white p-3 rounded-4 shadow-sm flex-fill" style="min-width: 220px; border: 4px solid #FFD700;">
-    <div class="text-primary fw-bold mb-1">
-      <i class="bi bi-envelope-fill me-2"></i>Fan Email
-    </div>
-    <div>warrior@cskfans.com</div>
-  </div>
-
-  <div class="info-card bg-white p-3 rounded-4 shadow-sm flex-fill" style="min-width: 220px; border: 4px solid #FFD700;">
-    <div class="text-primary fw-bold mb-1">
-      <i class="bi bi-telephone-fill me-2"></i>Contact
-    </div>
-    <div>+91 98765 43210</div>
-  </div>
-
-  <div class="info-card bg-white p-3 rounded-4 shadow-sm flex-fill" style="min-width: 220px; border: 4px solid #FFD700;">
-    <div class="text-primary fw-bold mb-1">
-      <i class="bi bi-people-fill me-2"></i>Fan Type
-    </div>
-    <div>Male</div>
-  </div>
-
-  <div class="info-card bg-white p-3 rounded-4 shadow-sm flex-fill" style="min-width: 220px; border: 4px solid #FFD700;">
-    <div class="text-primary fw-bold mb-1">
-      <i class="bi bi-person-check-fill me-2"></i>Fan Since
-    </div>
-    <div>IPL Season 2023</div>
-  </div>
-</div>
-
-
-  
-<!-- <div class="text-center mb-4">
-  <button id="editProfileBtn" class="btn btn-primary">
-    <i class="bi bi-pencil-fill me-1"></i> Edit Profile
-  </button>
-</div> -->
-
-
 <div id="editProfileForm" style="display: none;">
   <div class="container">
     <div class="card mb-5 p-4">
-
       <!-- <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <button class="nav-link active" id="fan-tab" data-bs-toggle="tab" data-bs-target="#fan" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="bi bi-person-circle"> </i>Fan Profile</button>
     <button class="nav-link" id="pin-tab" data-bs-toggle="tab" data-bs-target="#pin" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> <i class="bi bi-shield-lock-fill me-1"></i>Security PIN</button>
   </div>
 </nav> -->
-
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="bi bi-person-circle"> </i> Fan Profile</button>
-    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="bi bi-shield-lock-fill me-1"></i> Security PIN</button>
+    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="bi bi-person-circle" style="color:#0a1b65;"> </i> Fan Profile</button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="bi bi-shield-lock-fill me-1" style="color:#0a1b65;"></i> Security PIN</button>
   </div>
 </nav>
-
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         <form id="profileForm" onsubmit="return submitForm()">
       <div class="form-group mb-3">
-        <label style="color: #10100f;"><i class="bi bi-balloon-fill me-2"></i>First Name <span style="color: #ff0000;">*</span></label>
+        <label style="color:#0a1b65;"" class="fw-bolder"><i class="bi bi-balloon-fill me-2"></i>First Name <span style="color: #ff0000;">*</span></label>
         <input type="text" name="firstName" value="CSK" required class="form-control" />
       </div>
       <div class="form-group mb-3">
-        <label style="color: #10100f;"><i class="bi bi-trophy-fill me-2"></i>Last Name <span style="color: #ff0000;">*</span></label>
+        <label style="color:#0a1b65;" class="fw-bolder"><i class="bi bi-trophy-fill me-2"></i>Last Name <span style="color: #ff0000;">*</span></label>
         <input type="text" name="lastName" value="Warrior" required class="form-control" />
       </div>
       <div class="form-group mb-3">
-        <label style="color: #10100f;"><i class="bi bi-envelope-fill me-2"></i>CSK Fan Email <span style="color: #ff0000;">*</span></label>
+        <label style="color:#0a1b65;" class="fw-bolder"><i class="bi bi-envelope-fill me-2"></i>CSK Fan Email <span style="color: #ff0000;">*</span></label>
         <input type="email" name="email" value="warrior@cskfans.com" readonly class="form-control" />
-        <p class="text-muted" style="font-size: 0.875rem; color: #0a1b65;">This information cannot be changed.</p>
+        <p class="" style="font-size: 0.875rem; color: #ff0000;">This information cannot be changed.</p>
       </div>
       <div class="form-group mb-3">
-        <label style="color: #10100f;"><i class="bi bi-telephone-fill me-2"></i>Contact Number <span style="color: #ff0000;">*</span></label>
+        <label style="color:#0a1b65;" class="fw-bolder"><i class="bi bi-telephone-fill me-2"></i>Contact Number <span style="color: #ff0000;">*</span></label>
         <input type="text" name="contact" value="+91 98765 43210" readonly class="form-control" />
-        <p class="text-muted" style="font-size: 0.875rem; color: #0a1b65;">This information cannot be changed.</p>
+        <p class="" style="font-size: 0.875rem; color:  #ff0000;">This information cannot be changed.</p>
 
       </div>
       <div class="form-group mb-3">
-        <label style="color: #10100f;"><i class="bi bi-people-fill me-2"></i>Fan Category <span style="color: #ff0000;">*</span></label>
+        <label style="color:#0a1b65;" class="fw-bolder"><i class="bi bi-person-fill"></i></i>Fan Category <span style="color: #ff0000;">*</span></label>
         <select name="gender" required class="form-select">
           <option value="">-- Select --</option>
           <option>Male </option>
@@ -292,7 +288,7 @@
         </select>
       </div>
       <div class="form-group mb-4">
-        <label style="color: #10100f;"><i class="bi bi-star-fill me-2"></i>Fan Age Group <span style="color: #ff0000;">*</span></label>
+        <label style="color:#0a1b65;" class="fw-bolder"><i class="bi bi-star-fill me-2"></i>Fan Age Group <span style="color: #ff0000;">*</span></label>
         <select name="ageGroup" required class="form-select">
           <option value="">-- Select --</option>
           <option>18-24</option>
@@ -303,34 +299,33 @@
         </select>
       </div>
       <div class="form-actions">
-        <button type="submit" class="btn btn-primary w-100">
-          <i class="bi bi-arrow-repeat"></i> Update Fan Profile
+        <button type="submit" class="btn updateFanProfile w-100" ">
+          <i class="bi bi-arrow-repeat arrowColorchange" style="color:#0a1b65"></i> Update Fan Profile
         </button>
       </div>
     </form>
   </div>
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <div class="bg-warning text-center text-dark rounded p-3 mb-4 mt-3" style="border: 2px solid #000;">
-      <i class="bi bi-house-lock-fill fs-4 d-block mb-2"></i>
-      <strong class="d-block fs-5">CSK Fan Security</strong>
-      <small>Protect your CSK fan account with a strong PIN</small>
+    <div class="bg-warning text-center  rounded p-3 mb-4 mt-3" style="border: 2px solid #0a1b65;">
+      <i class="bi bi-house-lock-fill fs-4 d-block mb-2" style="color:#0a1b65;""></i>
+      <strong class="d-block fs-5" style="color:#0a1b65;">CSK Fan Security</strong>
+      <small style="color:#0a1b65;">Protect your CSK fan account with a strong PIN</small>
     </div>
-
     <div id="pin-section">
       <div class="form-group mb-3">
-        <label style="color: #10100f;"><i class="bi bi-lock-fill me-2"></i>Current Security PIN <span style="color: #ff0000;">*</span></label>
+        <label style="color:#0a1b65 ;" class="fw-bolder;"><i class="bi bi-lock-fill me-2"></i>Current Security PIN <span style="color: #ff0000;">*</span></label>
         <input type="password" class="form-control" placeholder="Enter current 4-digit PIN" maxlength="4" />
       </div>
       <div class="form-group mb-3">
-        <label style="color: #10100f;"><i class="bi bi-lock-fill me-2"></i>New Security PIN <span style="color: #ff0000;">*</span></label>
+        <label style="color: #0a1b65;"class="fw-bolder"><i class="bi bi-lock-fill me-2"></i>New Security PIN <span style="color: #ff0000;">*</span></label>
         <input type="password" class="form-control" placeholder="Enter new 4-digit PIN" maxlength="4" />
       </div>
       <div class="form-group mb-4">
-        <label style="color: #10100f;"><i class="bi bi-patch-check-fill me-2"></i>Confirm Security PIN <span style="color: #ff0000;">*</span></label>
+        <label style="color: #0a1b65;" class="fw-bolder"><i class="bi bi-patch-check-fill me-2"></i>Confirm Security PIN <span style="color: #ff0000;">*</span></label>
         <input type="password" class="form-control" placeholder="Re-enter new PIN" maxlength="4" />
       </div>
       <div class="form-actions">
-        <button class="btn btn-warning w-100 fw-bold" onclick="alert('PIN updated successfully!')">
+        <button class="btn btn-warning w-100 fw-bolder" onclick="alert('PIN updated successfully!')">
           <i class="bi bi-patch-exclamation-fill me-2"></i> Update Security PIN
         </button>
       </div>
@@ -431,9 +426,40 @@
   </div> -->
 
 </div>
-
-
 </div>
+  </div>
+</div>
+<div class="d-flex justify-content-between flex-wrap gap-3 p-3">
+  <div class="info-card bg-white p-3 rounded-4 shadow-sm flex-fill" style="min-width: 220px; border: 4px solid #FFD700;">
+    <div class=" fw-bold mb-1" style="color:#0a1b65;">
+      <i class="bi bi-envelope-fill me-2"></i>Fan Email
+    </div>
+    <div>warrior@cskfans.com</div>
+  </div>
+  <div class="info-card bg-white p-3 rounded-4 shadow-sm flex-fill" style="min-width: 220px; border: 4px solid #FFD700;">
+    <div class=" fw-bold mb-1" style="color:#0a1b65;">
+      <i class="bi bi-telephone-fill me-2"></i>Contact
+    </div>
+    <div>+91 98765 43210</div>
+  </div>
+  <div class="info-card bg-white p-3 rounded-4 shadow-sm flex-fill" style="min-width: 220px; border: 4px solid #FFD700;">
+    <div class="fw-bold mb-1" style="color:#0a1b65;">
+      <i class="bi bi-people-fill me-2"></i>Fan Type
+    </div>
+    <div>Male</div>
+  </div>
+  <div class="info-card bg-white p-3 rounded-4 shadow-sm flex-fill" style="min-width: 220px; border: 4px solid #FFD700;">
+    <div class="fw-bold mb-1" style="color:#0a1b65;">
+      <i class="bi bi-person-check-fill me-2"></i>Fan Since
+    </div>
+    <div>IPL Season 2023</div>
+  </div>
+</div>
+<!-- <div class="text-center mb-4">
+  <button id="editProfileBtn" class="btn btn-primary">
+    <i class="bi bi-pencil-fill me-1"></i> Edit Profile
+  </button>
+</div> -->
 
 <script>
   function toggleSection(id){
@@ -467,7 +493,6 @@
     });
   });
 </script>
-
 <script>
   document.getElementById("editProfileBtn").addEventListener("click", function () {
     const section = document.getElementById("editProfileForm");
@@ -483,6 +508,23 @@
       this.innerHTML = '<i class="bi bi-pencil-fill me-1"></i> Edit Profile';
       this.classList.remove("btn-danger");
       this.classList.add("btn-primary");
+    }
+  });
+</script>
+<script>
+  const editIcon = document.getElementById('editIcon');
+  const fileInput = document.getElementById('fileInput');
+  const profileImage = document.getElementById('profileImage');
+
+  editIcon.addEventListener('click', () => {
+    fileInput.click(); // Open Finder or File Picker
+  });
+
+  fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const imageURL = URL.createObjectURL(file);
+      profileImage.src = imageURL; // Update profile picture
     }
   });
 </script>
